@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "ExpenseTrackerApplication",
+      "request": "launch",
+      "mainClass": "ExpenseTrackerApplication",
+      "projectName": "expense-tracker"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ExpenseTrackerApplication<expense-tracker>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.expenseTracker.ExpenseTrackerApplication",
+      "projectName": "expense-tracker",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
