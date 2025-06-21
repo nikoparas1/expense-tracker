@@ -28,7 +28,7 @@ public class Expense {
 
     private String expenseName;
 
-    private String expenseCatgory;
+    private String expenseCategory;
 
     private BigDecimal expenseAmount;
 }

@@ -35,7 +35,7 @@ public class ExpenseService {
         Expense expense = mapFromDto(expenseDto);
 
         savedExpense.setExpenseName(expense.getExpenseName());
-        savedExpense.setExpenseCatgory(expense.getExpenseCatgory());
+        savedExpense.setExpenseCategory(expense.getExpenseCategory());
         savedExpense.setExpenseAmount(expense.getExpenseAmount());
         return expenseRepository.save(savedExpense).getId();
     }
@@ -58,7 +58,7 @@ public class ExpenseService {
     private Expense mapFromDto(ExpenseDto expense) {
         return Expense.builder()
                 .expenseName(expense.getExpenseName())
-                .expenseCatgory(expense.getExpenseCategory())
+                .expenseCategory(expense.getExpenseCategory())
                 .expenseAmount(expense.getExpenseAmount()).build();
     }
 
@@ -66,7 +66,7 @@ public class ExpenseService {
         return ExpenseDto.builder()
                 .id(expense.getId())
                 .expenseName(expense.getExpenseName())
-                .expenseCategory(expense.getExpenseCatgory())
+                .expenseCategory(expense.getExpenseCategory())
                 .expenseAmount(expense.getExpenseAmount()).build();
     }
 }
