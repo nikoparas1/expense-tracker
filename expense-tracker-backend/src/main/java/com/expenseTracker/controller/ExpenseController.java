@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import com.expenseTracker.dto.ExpenseDto;
 import com.expenseTracker.service.ExpenseService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -25,14 +26,14 @@ public class ExpenseController {
     private final ExpenseService expenseService;
 
     @PostMapping
-    public ResponseEntity<String> addExpense(@RequestBody ExpenseDto expenseDto) {
+    public ResponseEntity<String> addExpense(@Valid @RequestBody ExpenseDto expenseDto) {
         Long expenseId = expenseService.addExpense(expenseDto);
 
         return ResponseEntity.ok(String.format("Expense (id: %s) created successfully", expenseId));
     }
 
     @PutMapping
-    public ResponseEntity<String> updateExpense(@RequestBody ExpenseDto expenseDto) {
+    public ResponseEntity<String> updateExpense(@Valid @RequestBody ExpenseDto expenseDto) {
         Long expenseId = expenseService.updateExpense(expenseDto);
 
         return ResponseEntity.ok(String.format("Expense (id %s) updated successfully", expenseId));

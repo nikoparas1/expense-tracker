@@ -2,7 +2,9 @@ package com.expenseTracker.dto;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,12 +17,13 @@ import lombok.NoArgsConstructor;
 public class ExpenseDto {
     private Long id;
 
-    @Column(name = "expense_name")
+    @NotBlank
     private String expenseName;
 
-    @Column(name = "expense_category")
+    @NotBlank
     private String expenseCategory;
 
-    @Column(name = "expense_amount")
+    @NotNull
+    @PositiveOrZero
     private BigDecimal expenseAmount;
 }
